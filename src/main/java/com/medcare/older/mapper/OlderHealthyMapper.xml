@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace 指向当前的Mapper接口 -->
+<mapper namespace="com.medcare.older.mapper.OlderHealthyMapper">
+	
+
+
+
+	<!--  
+	<select id="getAllXueYa"  resultType="com.medcare.older.pojo.OlderHealthy" >
+		select  health_sz,health_ss,health_mb,health_mb_time from t_health where old_id = #{old_id}
+	</select>
+		
+		
+	<select id="getAllXueTang"  resultType="com.medcare.older.pojo.OlderHealthy" >
+		select  health_xt,health_xt_time,health_xt_time_cha from t_health where old_id = #{old_id}
+	</select>
+
+	<select id="getAllXueYang"  resultType="com.medcare.older.pojo.OlderHealthy" >
+		select  health_xy,health_xy_time from t_health where old_id = #{old_id}
+	</select>
+	-->
+    <select id="getAllMb"  resultType="com.medcare.older.pojo.OlderHealthyOne" >
+		select  * from t_healthy where old_id = #{old_id} And t_healthy.healthy_name='脉搏'
+	</select>
+	<select id="getAllSS"  resultType="com.medcare.older.pojo.OlderHealthyOne" >
+		select  * from t_healthy where old_id = #{old_id} And t_healthy.healthy_name='收缩压'
+	</select>
+	<select id="getAllSZ"  resultType="com.medcare.older.pojo.OlderHealthyOne" >
+		select  * from t_healthy where old_id = #{old_id} And t_healthy.healthy_name='舒张压'
+	</select>
+    <select id="getAllXueTang"  resultType="com.medcare.older.pojo.OlderHealthyOne" >
+		select  * from t_healthy where old_id = #{old_id} And t_healthy.healthy_name='血糖'
+	</select>
+	   <select id="getAllXueYang"  resultType="com.medcare.older.pojo.OlderHealthyOne" >
+		select  * from t_healthy where old_id = #{old_id} And t_healthy.healthy_name='血氧'
+	</select>
+	
+
+
+</mapper>

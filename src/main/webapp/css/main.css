@@ -1,0 +1,269 @@
+/**
+ * 自定义样式
+ */
+
+
+/**
+ * 扩展样式
+ */
+.navbar-wang {
+  background-color: #fff;
+  border-color: #f5f5f5;
+    height: 0px;
+    margin-bottom: 0;
+}
+.navbar-wang .navbar-brand {
+  color: #777;
+}
+.navbar-wang .navbar-brand:hover,
+.navbar-wang .navbar-brand:focus {
+  color: #5e5e5e;
+  background-color: transparent;
+}
+.navbar-wang .navbar-text {
+  color: #777;
+}
+.navbar-wang .navbar-nav > li > a {
+  color: #777;
+    line-height: 50px;
+    font-size: 14px;
+}
+.navbar-wang .navbar-nav > li > a:hover,
+.navbar-wang .navbar-nav > li > a:focus {
+  color: #333;
+  background-color: transparent;
+}
+.navbar-wang .navbar-nav > .active > a,
+.navbar-wang .navbar-nav > .active > a:hover,
+.navbar-wang .navbar-nav > .active > a:focus {
+  color: #555;
+  background-color: transparent;
+    border-bottom: 2px solid #E92322;
+}
+.navbar-wang .navbar-nav > .disabled > a,
+.navbar-wang .navbar-nav > .disabled > a:hover,
+.navbar-wang .navbar-nav > .disabled > a:focus {
+  color: #ccc;
+  background-color: transparent;
+}
+.navbar-wang .navbar-toggle {
+  border-color: #ddd;
+}
+.navbar-wang .navbar-toggle:hover,
+.navbar-wang .navbar-toggle:focus {
+  background-color: #ddd;
+}
+.navbar-wang .navbar-toggle .icon-bar {
+  background-color: #888;
+}
+.navbar-wang .navbar-collapse,
+.navbar-wang .navbar-form {
+  border-color: #e7e7e7;
+}
+.navbar-wang .navbar-nav > .open > a,
+.navbar-wang .navbar-nav > .open > a:hover,
+.navbar-wang .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+@media (max-width: 767px) {
+  .navbar-wang .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+  }
+  .navbar-wang .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-wang .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333;
+    background-color: transparent;
+      border-bottom: 2px solid #E92322;
+  }
+  .navbar-wang .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-wang .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-wang .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+  }
+  .navbar-wang .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbar-wang .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbar-wang .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+  }
+}
+.navbar-wang .navbar-link {
+  color: #777;
+}
+.navbar-wang .navbar-link:hover {
+  color: #333;
+}
+.navbar-wang .btn-link {
+  color: #777;
+}
+.navbar-wang .btn-link:hover,
+.navbar-wang .btn-link:focus {
+  color: #333;
+}
+.navbar-wang .btn-link[disabled]:hover,
+fieldset[disabled] .navbar-wang .btn-link:hover,
+.navbar-wang .btn-link[disabled]:focus,
+fieldset[disabled] .navbar-wang .btn-link:focus {
+  color: #ccc;
+}
+
+.row{
+	margin-right: -14px;
+    margin-left: -15px;
+    margin-top: 20px;
+}
+
+
+/*
+ * 样式都通过ID限定
+ * 尽可能多使用直接子代选择器   >
+ */
+
+
+/**
+ * 公共级别的样式
+ */
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+}
+
+/*<!--导入字体-->*/
+@font-face {
+	font-family: '王昭瑄';
+	/*<!--前面是什么字体,后边是解析的格式-->*/ src: url('../font/MiFie-Web-Font.eot’') format('embedded-opentype'), url('../font/MiFie-Web-Font.svg') format("svg"), url('../font/MiFie-Web-Font.ttf') format("truetype"), 
+	url('../font/MiFie-Web-Font.woff') format("woff"),url('../font/logo.svg') format("svg"),url('../font/weijinsuo.svg') format("svg");
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+	font-family: 王昭瑄;
+	font-style: normal;
+	/*去斜体*/
+}
+
+.icon-mobilephone::before {
+	content: "\e908";
+	/*设置字体中的字符集*/
+	 font-size: 13px;
+}
+
+.icon-telephone::before {
+	content: "\e909";
+	font-size: 15px;
+}
+.icon-logo::before{
+	content: "\e93e";
+}
+.icon-icon::before{
+	content: "\e920";
+}
+
+/**
+ * 头部区域
+ */
+
+#header {
+}
+
+#main_ad{
+	height: 228px;
+}
+
+#header> .topbar {
+	height: 98px;
+	line-height: 40px;
+	/*行高跟单元格的高度相同就可以居中对齐*/
+}
+
+/*设置中间的边
+ 	+ 选择器 
+ * */
+
+/*#header> .topbar> .container> .row> div+ div {
+/*	border-left: 1px solid #C0C0C0;*/
+}*/
+
+#header .mobile-link {
+	font-size: 12px;
+	color: #888888;
+}
+
+#header .icon-icon{
+	font-size: 50px;
+	color: #E92322;
+	line-height: 50px;
+	vertical-align: middle;
+}
+
+#header .icon-logo{
+	font-size: 32px;
+	color: #333;
+	line-height: 50px;
+	vertical-align: middle;/*同一水平线*/
+}
+
+#header .header1{
+		font-size: 12px;
+	color: #888888;
+}
+
+#header .header1:hover{
+	text-decoration: none;
+	color: #000000;
+}
+
+/*去下划线*/
+#header .mobile-link:hover {
+	text-decoration: none;
+}
+	
+/*设置鼠标移上去显示图片*/
+
+#header .mobile-link> img {
+	display: none;
+	position: absolute;
+	left: 100%;
+	margin-left: -170px;
+	top: 26px;
+	z-index: 1001;
+}
+
+#header .mobile-link:hover> img {
+	display: block;
+}
+
+/*
+ * 按钮
+ */
+.topbar-button{
+	 padding-top: 22px;		
+}
+
+#tese{
+	
+}
+#tese > .container > .row > div{
+	height: 50px;
+	background-color: #FF4400;
+}
+#tese > .container > .row > div:nth-of-type(2n){
+	background-color: #5BC0DE;
+}
+
+
+/*隔行换色*/
+
+section:nth-of-type(2n) {
+	/*选择到第1、3、5、7、9
+	 	nth-child
+	 * */
+	background-color: #CFCFCF;
+}
+
+
+/**
+ * 脚注区域
+ */

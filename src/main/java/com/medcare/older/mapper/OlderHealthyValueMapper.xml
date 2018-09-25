@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace 指向当前的Mapper接口 -->
+<mapper namespace="com.medcare.older.mapper.OlderHealthyValueMapper">
+	
+
+
+
+	
+	<select id="getAllValue"  resultType="com.medcare.older.pojo.OlderHealthyValueInformation" >
+		select value_information_id,value_name,value_min ,value_max,value_statue  
+		from t_value,t_value_information 
+		where t_value.old_id = t_value_information.old_id And t_value.old_id=#{old_id}
+		
+		
+	</select>
+	<delete id="removeOneValue" parameterType="com.medcare.older.pojo.OlderHealthyValueInformation" >
+		delete from t_value_information  where old_id=#{old_id} AND value_information_id=#{value_information_id}
+	</delete>
+		
+	
+	
+	<select id="getAllValueWarn"  resultType="com.medcare.older.pojo.OlderHealthyValueWarn">
+		    select * from t_healthy,t_value_information
+		   where  t_healthy.old_id = t_value_information.old_id and  t_healthy.old_id=#{old_id}
+			AND   t_value_information.value_name=t_healthy.healthy_name 
+			AND   (t_healthy.healthy_num>t_value_information.value_max
+			Or t_healthy.healthy_num  &lt; t_value_information.value_max)
+		
+			
+				
+	</select>	
+	
+	 
+	<update id="headleValueWarn" parameterType="com.medcare.older.pojo.OlderHealthyValueWarn">
+	    
+	    UPDATE t_healthy
+		SET healthy_state='已处理'
+		WHERE healthy_id=#{healthy_id} AND old_id=#{old_id};
+	    
+	    
+	</update>
+	
+	<select id="getOneValue"  resultType="com.medcare.older.pojo.OlderHealthyValueInformation" >
+		select value_information_id,value_name,value_min ,value_max,value_statue  
+		from t_value_information 
+		where value_information_id = #{id}
+		
+		
+	</select>
+	<update id="updateOneValue" parameterType="com.medcare.older.pojo.OlderHealthyValueInformation">
+		UPDATE t_value_information
+		<set>
+			
+			
+			<if test="value_name!=null">
+				value_name =#{value_name},
+			</if>
+			<if test="value_min!=null">
+				value_min =#{value_min},
+			</if>
+			<if test="value_max!=null">
+				value_max =#{value_max},
+			</if>
+			<if test="value_statue!=null">
+				value_statue =#{value_statue},
+			</if>
+			
+		</set>
+		WHERE value_information_id = #{value_information_id};
+	</update>
+	
+
+	
+
+
+</mapper>
